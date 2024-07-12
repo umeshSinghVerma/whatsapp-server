@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const { GetAllTimeLeaderBoard } = require('./utils/supabase');
 const { handleIncomingMessage } = require('./utils/handleIncomingText');
 const app = express()
-const PORT = 8080
+const PORT = process.env.PORT | 8080;
 // Setup a webhook route
 app.use(bodyParser.json())
 app.post('/ultramsgwebhook', async(req, res) => {
